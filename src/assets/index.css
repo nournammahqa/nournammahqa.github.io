@@ -1,0 +1,275 @@
+@import url("https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600;700&family=Sora:wght@200;300;400;500;600;700;800&display=swap");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-bg: #08111d;
+  --color-surface: rgba(10, 20, 34, 0.72);
+  --color-surface-strong: rgba(7, 14, 25, 0.93);
+  --color-stroke: rgba(202, 220, 238, 0.1);
+  --color-text: #edf5ff;
+  --color-text-soft: rgba(237, 245, 255, 0.74);
+  --color-accent: #57c7d4;
+  --color-accent-2: #f8c24c;
+  --color-shadow: 0 30px 80px rgba(0, 0, 0, 0.32);
+}
+
+.translate-z-0 {
+  transform: translateZ(0px);
+}
+.swiper-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet,
+.swiper-pagination-horizontal.swiper-pagination-bullets
+  .swiper-pagination-bullet {
+  background-color: var(--color-accent);
+}
+
+.swiper-button-next:after,
+.swiper-button-prev:after,
+.swiper-button-next:after,
+.swiper-rtl .swiper-button-prev:after {
+  color: var(--color-accent);
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    background:
+      radial-gradient(circle at 15% 20%, rgba(87, 199, 212, 0.15), transparent 28%),
+      radial-gradient(circle at 82% 18%, rgba(248, 194, 76, 0.14), transparent 30%),
+      linear-gradient(135deg, #07111c 0%, #0c1625 48%, #132338 100%);
+  }
+  body {
+    @apply leading-relaxed;
+    background: transparent;
+    color: var(--color-text);
+    font-family: "Sora", sans-serif;
+    overflow-x: hidden;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  .page {
+    @apply w-full min-h-screen overflow-x-hidden overflow-y-auto;
+  }
+  .h1 {
+    @apply text-[35px] leading-tight md:text-[60px] md:leading-[1.2] mb-8 font-semibold;
+    font-family: "Fraunces", serif;
+  }
+  .h2 {
+    @apply text-[35px] leading-tight md:text-[54px] md:leading-[1.2] mb-4 font-semibold;
+    font-family: "Fraunces", serif;
+  }
+  p {
+    @apply leading-[1.8] font-light;
+    color: var(--color-text-soft);
+  }
+}
+
+.open-modal {
+  animation: openModal 0.3s ease-out forwards;
+}
+
+.confirm{
+  animation: confirm 0.3s ease-out forwards;
+}
+
+@keyframes confirm {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.01);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes openModal {
+  from {
+    transform: scale(0);
+    opacity: 0;
+  }
+
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.close-modal {
+  animation: closeModal 0.3s ease-out forwards;
+}
+
+@keyframes closeModal {
+  from {
+    transform: scale(1);
+    opacity: 1;
+  }
+
+  to {
+    transform: scale(0);
+    opacity: 0;
+  }
+}
+
+.scroll-container::-webkit-scrollbar {
+  display: none;
+}
+
+.scroll-container {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  overflow: scroll;
+}
+
+.brand-loader {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 1.5rem;
+  background:
+    linear-gradient(180deg, rgba(10, 20, 34, 0.9), rgba(8, 14, 24, 0.96)),
+    radial-gradient(circle at 20% 20%, rgba(87, 199, 212, 0.14), transparent 28%);
+}
+
+.brand-loader__glow {
+  position: absolute;
+  inset: auto;
+  width: 48%;
+  height: 48%;
+  border-radius: 999px;
+  background: radial-gradient(circle, rgba(87, 199, 212, 0.22), transparent 70%);
+  filter: blur(18px);
+  opacity: 0.9;
+}
+
+.brand-loader__ring {
+  position: relative;
+  z-index: 2;
+  width: 68px;
+  height: 68px;
+  border-radius: 50%;
+  border: 2px solid rgba(255, 255, 255, 0.08);
+  border-top-color: var(--color-accent);
+  border-right-color: var(--color-accent-2);
+  animation: brandLoaderSpin 1.05s linear infinite;
+}
+
+.brand-loader__ring span {
+  position: absolute;
+  inset: 9px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: radial-gradient(circle at top, rgba(255, 255, 255, 0.08), rgba(8, 13, 24, 0.98));
+}
+
+.brand-loader__shimmer {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    110deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.02) 28%,
+    rgba(255, 255, 255, 0.09) 48%,
+    rgba(255, 255, 255, 0.02) 68%,
+    transparent 100%
+  );
+  transform: translateX(-100%);
+  animation: brandLoaderShimmer 1.8s ease-in-out infinite;
+}
+
+@keyframes brandLoaderSpin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes brandLoaderShimmer {
+  to {
+    transform: translateX(100%);
+  }
+}
+
+.page-enter {
+  animation: pageEnter 0.55s ease both;
+}
+
+@keyframes pageEnter {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+::selection {
+  background-color: rgba(87, 199, 212, 0.9);
+  color: #08111d;
+}
+
+a:active {
+  outline: none; /* Remove the default outline */
+  border: none; /* Remove the default border */
+  color: inherit; /* Inherit the color from the parent */
+  text-decoration: underline; /* Add your desired text decoration, like underline */
+}
+/* .card {
+  position: relative;
+  width: 300px;
+  height: 200px;
+  perspective: 1000px;
+  background-color: red;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(235, 207, 207, 0.7);
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transform: rotateX(-90deg);
+  transform-origin: center bottom;
+  transition: transform 0.5s, opacity 0.5s;
+}
+
+.card:hover .overlay {
+  opacity: 1;
+  transform: rotateX(0deg);
+}
+
+h2 {
+  margin: 0;
+} */
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

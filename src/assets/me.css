@@ -1,0 +1,310 @@
+.about-page {
+  min-height: calc(100vh - 60px);
+  padding: 2.5rem 0 4rem;
+}
+
+.about-shell {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.about-heading {
+  max-width: 48rem;
+}
+
+.about-kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.55rem 0.95rem;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.04);
+  color: rgba(255, 255, 255, 0.86);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.about-kicker::before {
+  content: "";
+  width: 0.55rem;
+  height: 0.55rem;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--color-accent), var(--color-accent-2));
+}
+
+.about-title {
+  margin: 1.15rem 0 0;
+  color: white;
+  font-family: "Fraunces", serif;
+  font-size: clamp(2rem, 4vw, 3.25rem);
+  line-height: 1.08;
+  letter-spacing: -0.04em;
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(340px, 0.85fr);
+  gap: 1.6rem;
+  align-items: start;
+}
+
+.about-intro-card,
+.about-panel {
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 2rem;
+  background:
+    linear-gradient(180deg, rgba(10, 20, 34, 0.84), rgba(8, 14, 24, 0.94)),
+    linear-gradient(135deg, rgba(87, 199, 212, 0.05), transparent 48%);
+  box-shadow: 0 26px 60px rgba(0, 0, 0, 0.22);
+  backdrop-filter: blur(16px);
+}
+
+.about-intro-card {
+  display: flex;
+  flex-direction: column;
+  gap: 1.4rem;
+  padding: 1.5rem;
+}
+
+.about-intro-copy {
+  display: flex;
+  flex-direction: column;
+  gap: 0.95rem;
+}
+
+.about-intro-eyebrow {
+  color: rgba(87, 199, 212, 0.78);
+  font-size: 0.76rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.about-intro-title {
+  margin: 0;
+  color: white;
+  font-family: "Fraunces", serif;
+  font-size: clamp(1.7rem, 3vw, 2.45rem);
+  line-height: 1.15;
+  letter-spacing: -0.03em;
+}
+
+.about-intro-description {
+  margin: 0;
+  color: rgba(238, 244, 255, 0.76);
+  font-size: 0.98rem;
+  line-height: 1.9;
+}
+
+.about-highlight-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.about-highlight-list span {
+  padding: 0.75rem 1rem;
+  border-radius: 999px;
+  border: 1px solid rgba(202, 220, 238, 0.08);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.04), rgba(87, 199, 212, 0.03));
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 0.84rem;
+}
+
+.about-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.9rem;
+}
+
+.about-stat-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  padding: 1rem 1.05rem;
+  border-radius: 1.3rem;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.04), rgba(87, 199, 212, 0.03));
+}
+
+.about-stat-value {
+  color: var(--color-accent);
+  font-size: clamp(1.35rem, 2vw, 2rem);
+  font-weight: 700;
+}
+
+.about-stat-label {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.8rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.about-panel {
+  padding: 1.4rem;
+}
+
+.about-tabs {
+  display: flex;
+  gap: 0.8rem;
+  margin-bottom: 1rem;
+}
+
+.about-tabs .tab {
+  position: relative;
+  padding: 0.75rem 1rem;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.04);
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  transition:
+    color 0.25s ease,
+    border-color 0.25s ease,
+    background 0.25s ease,
+    transform 0.25s ease;
+}
+
+.about-tabs .tab:hover,
+.about-tabs .tab.active {
+  color: white;
+  border-color: rgba(87, 199, 212, 0.26);
+  background: rgba(87, 199, 212, 0.08);
+  transform: translateY(-1px);
+}
+
+.about-tab-content {
+  min-height: 100%;
+}
+
+.experience-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.95rem;
+}
+
+.experience-item {
+  display: grid;
+  grid-template-columns: 56px 1fr;
+  gap: 1rem;
+  align-items: start;
+  padding: 1rem;
+  border-radius: 1.35rem;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.experience-index {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: rgba(87, 199, 212, 0.12);
+  color: var(--color-accent);
+  font-size: 0.95rem;
+  font-weight: 700;
+}
+
+.experience-copy h4 {
+  margin: 0 0 0.35rem;
+  color: white;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.experience-copy p {
+  margin: 0;
+  color: rgba(238, 244, 255, 0.68);
+  font-size: 0.92rem;
+  line-height: 1.7;
+}
+
+.about-cta-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1.2rem 1.3rem;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 1.5rem;
+  background: linear-gradient(180deg, rgba(11, 18, 32, 0.72), rgba(8, 14, 24, 0.88));
+}
+
+.about-cta-copy {
+  max-width: 44rem;
+  margin: 0;
+  color: rgba(238, 244, 255, 0.74);
+  font-size: 0.96rem;
+  line-height: 1.8;
+}
+
+.about-cta-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.7rem;
+  padding: 0.9rem 1.2rem;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.05);
+  color: white;
+  font-size: 0.9rem;
+  font-weight: 600;
+  transition:
+    transform 0.25s ease,
+    border-color 0.25s ease,
+    background 0.25s ease;
+}
+
+.about-cta-link:hover {
+  transform: translateY(-2px);
+  border-color: rgba(87, 199, 212, 0.26);
+  background: rgba(87, 199, 212, 0.08);
+}
+
+@media (max-width: 1188px) {
+  .about-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .about-page {
+    padding: 1.6rem 0 3rem;
+  }
+
+  .about-shell {
+    gap: 1.5rem;
+  }
+
+  .about-intro-card,
+  .about-panel {
+    border-radius: 1.5rem;
+    padding: 1rem;
+  }
+
+  .about-stats-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .experience-item {
+    grid-template-columns: 1fr;
+  }
+
+  .about-cta-row {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .about-cta-link {
+    justify-content: center;
+  }
+}
