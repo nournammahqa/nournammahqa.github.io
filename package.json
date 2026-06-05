@@ -1,9 +1,9 @@
 {
-  "name": "NourNaamah.github.io",
+  "name": "nournammahqa.github.io",
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://NourNaamah.github.io",
+  "homepage": "https://nournammahqa.github.io",
   "scripts": {
     "dev": "vite",
     "predeploy": "npm run build",
