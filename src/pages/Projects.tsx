@@ -166,15 +166,25 @@ const Projects = () => {
                     </div>
 
                     <div className="project-actions">
-                      <a
-                        target="_blank"
-                        rel="noreferrer"
-                        href={project.link}
-                        className="project-link primary"
-                      >
-                        <FaEye />
-                        <span>Live Preview</span>
-                      </a>
+                      {project.link ? (
+                        <a
+                          target="_blank"
+                          rel="noreferrer"
+                          href={project.link}
+                          className="project-link primary"
+                        >
+                          <FaEye />
+                          <span>Live Preview</span>
+                        </a>
+                      ) : (
+                        <span
+                          className="project-link primary opacity-60 cursor-not-allowed"
+                          aria-disabled="true"
+                        >
+                          <FaEye />
+                          <span>In Progress</span>
+                        </span>
+                      )}
                       <button
                         type="button"
                         className="project-link secondary"
