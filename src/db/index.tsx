@@ -34,9 +34,9 @@ const mePage: IMe = {
   description:
     "QA engineer and project coordinator focused on helping teams ship reliable products with clarity and confidence. My work combines structured testing, issue tracking, release support, and cross-team coordination to keep delivery organized and quality visible. I also bring three years of teaching experience in programming, software engineering, and information security, which strengthened my communication, mentoring, and systems thinking.",
   projects_info: {
-    total_project: 20,
+    total_project: 24,
     finished_project: 15,
-    under_development: 5,
+    under_development: 9,
     years_experience: 3,
   },
 

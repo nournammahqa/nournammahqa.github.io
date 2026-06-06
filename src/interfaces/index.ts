@@ -51,7 +51,7 @@ interface IProjects {
   id: number;
   name: string;
   short_description: string;
-  link: string;
+  link?: string;
   main_image: string;
   images: string[];
   languages: ReactNode[];
