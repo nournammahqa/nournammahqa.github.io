@@ -23,7 +23,7 @@ const homePage: IHome = {
   email: "nourjabernaamah@gmail.com",
   name: "nour",
   personal_image: "/pink1.jpg",
-  cv: "/CV.pdf",
+  cv: "/CV_QA.pdf",
   linkedIn: "https://www.linkedin.com/in/nour-naamah-871630197/",
   gitLap: "https://github.com/nour",
 };
